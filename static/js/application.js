@@ -1,5 +1,6 @@
 window.App = angular.module('appPrueba', [
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'ngResource',
 ]);
 // Configuration
 App.config(['uibDatepickerConfig', 'uibDatepickerPopupConfig', function(uibDatepickerConfig, uibDatepickerPopupConfig) {
@@ -9,15 +10,19 @@ App.config(['uibDatepickerConfig', 'uibDatepickerPopupConfig', function(uibDatep
     uibDatepickerPopupConfig.onOpenFocus = false;
 }]);
 
-App.controller('ApplicationController', function($scope) {
+App.controller('ApplicationController', function($scope, $filter) {
     $scope.data = { 'foo': 'bar' };
     $scope.savedObjects = [];
+
+    function formatDate(date) {
+        return $filter('date')(date, 'dd/MM/yyyy');
+    }
 
     $scope.save = function() {
         if ($scope.form.$valid) {
             var obj = {
                 name: $scope.name,
-                period: { from: $scope.period.from, to: $scope.period.to }
+                period: { from: formatDate($scope.period.from), to: formatDate($scope.period.to) }
             };
 
             $scope.savedObjects.push(obj);
