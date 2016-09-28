@@ -1,15 +1,17 @@
-Crear virtual environment
-
+### Crear virtual environment
+```
 $virtualenv --python=/usr/bin/python3 venv
+```
 
-Activar virtualenv
-
+### Activar virtualenv
+```
 $source venv/bin/activate
-
-Instalar dependencias
-
+```
+### Instalar dependencias
+```
 $pip install -r requirements.txt
-
-Correr app
-
+```
+### Correr app
+```
 $./app.py
+```
