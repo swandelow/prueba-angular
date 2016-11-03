@@ -25,14 +25,33 @@ https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.4.7/angular-resource.j
             <div class="panel-body">
                 <form name="form" novalidate>
                     <input name="name" ng-model="name" type="text" required placeholder="Ingrese nombre">
-                    <double-date name="period" ng-model="period"></double-date>
+                    <double-date name="period" ng-model="period" required></double-date>
                     <button ng-click="save()">Guardar</button>
                 </form>
             </div>
         </div>
-        <div class="panel panel-default">
-            {{savedObjects}}
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Saved objects
+                    </div>
+                    <div class="panel-body">
+                        {{savedObjects}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Form status</div>
+                    <div class="panel-body">
+                        <p>{{form | json}}</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
         <!-- <div class="my-panel line-clamp">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a quam vel neque maximus ullamcorper eu et felis. Etiam lacinia, mauris imperdiet luctus commodo, purus risus porttitor odio, eleifend rutrum leo tortor a urna. Etiam a orci at ex imperdiet suscipit. Proin vitae lobortis arcu. Aliquam erat volutpat. Sed sed urna tellus. Aliquam sed tempor turpis. Duis quis nibh eu magna scelerisque pretium. Praesent molestie, ex nec sagittis accumsan, ipsum mi pulvinar ipsum, ac pretium neque urna vel dolor. Suspendisse ac nisi blandit, pharetra odio ac, lacinia enim. Nullam tempor dui vel aliquet convallis. Suspendisse vehicula ultricies nulla, eget viverra urna luctus sit amet. Etiam ac ornare nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere tempus congue. Nam efficitur ante eros, ut tempus lacus luctus faucibus. Praesent porta gravida lacus, ut mattis turpis viverra non. Donec ullamcorper vulputate ante, non tempor lorem tincidunt ut. Curabitur vitae pellentesque diam. Etiam sit amet nisi nunc. In tincidunt gravida mauris, quis posuere ex lacinia et. Mauris id nisi in lacus euismod commodo ac non risus. Aenean eleifend quis arcu at malesuada. Vivamus blandit sit amet ipsum eu dignissim. Nunc id est ut odio ultricies faucibus. Nam in accumsan libero, a suscipit dolor. Curabitur eu mi eu sem venenatis accumsan quis eu leo. Nam aliquam enim quis molestie finibus. Nullam quis ornare sapien. Vivamus diam tortor, tincidunt a porta lacinia, imperdiet in lorem.
         </div> -->
