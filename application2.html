@@ -24,8 +24,8 @@ https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.4.7/angular-resource.j
             </div>
             <div class="panel-body">
                 <form name="form" novalidate>
-                    <input name="name" ng-model="name" type="text" required placeholder="Ingrese nombre">
-                    <double-date name="period" ng-model="period" required></double-date>
+                    <input name="name" ng-model="todo.name" type="text" required placeholder="Ingrese nombre">
+                    <double-date name="period" ng-model="todo.period"></double-date>
                     <button ng-click="save()">Guardar</button>
                 </form>
             </div>
